@@ -23,6 +23,7 @@ def get_user_input():
         # function returns all VMs that user defined 
     return machines
 
+# Save information to json file in configs folder
 instances = []
 if os.path.exists("configs/instances.json"):
     with open("configs/instances.json", "r") as f:
