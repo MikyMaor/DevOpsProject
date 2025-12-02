@@ -8,7 +8,7 @@ from src.machine import Machine
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SCRIPT_PATH = os.path.join(BASE_DIR, "scripts", "install_service_nginx.sh")
 
-
+#   Function to run the bash script
 def run_install_script(script_path=SCRIPT_PATH):
     try:
         print(f"\n🔧 Running installation script at: {script_path}")
