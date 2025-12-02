@@ -1,6 +1,14 @@
+import logging
 from pydantic import BaseModel, field_validator
 
+# Configure logging
+logging.basicConfig(
+    filename="logs/machine.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
+# Machine class with validation and logging
 class Machine(BaseModel):
     name: str
     os: str
@@ -10,7 +18,7 @@ class Machine(BaseModel):
     # Validate OS (only Ubuntu or OS)
     @field_validator("os")
     def validate_os(cls, v):
-        valid_os = ["Windows", "Linux"]
+        valid_os = ["Windows", "windows", "linux", "Linux"]
         if v not in valid_os:
             raise ValueError(f"OS must be one of: {valid_os}")
         return v
@@ -29,3 +37,13 @@ class Machine(BaseModel):
         if len(v.strip()) < 3:
             raise ValueError("CPU model is too short.")
         return v
+
+    def to_dict(self):
+        """Return a dictionary representation."""
+        return self.model_dump()
+
+    def log_creation(self):
+        """Log creation event."""
+        logging.info(
+            f"Machine created: {self.name} ({self.os}, {self.cpu}, {self.ram})"
+        )

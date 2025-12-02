@@ -1,14 +1,8 @@
 [
     {
-        "name": "asdasd",
-        "os": "asdasdasd",
-        "cpu": "asdasd",
-        "ram": "asdasd"
-    },
-    {
-        "name": "asdasdasd",
-        "os": "asdasdasd",
-        "cpu": "asdasdas",
-        "ram": "asdasd"
+        "name": "miky",
+        "os": "windows",
+        "cpu": "core i9",
+        "ram": "32GB"
     }
 ]
