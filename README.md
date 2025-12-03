@@ -17,7 +17,7 @@ This project aims to provide a clear, modular, and automated simulation of infra
 
  ### Setup Instructions 📌
 
-1. Install requirements (ONLY NEEDED IF RUNNING WINDOWS):
+1. Install requirements (ONLY NEEDED IF RUNNING WINDOWS):  
 Install Python interpreter (Can be found at the official site: https://www.python.org/downloads/ )  
 Install Git Bash / GUI (Can be found at the official site: https://git-scm.com/install/ )  
 After installing these, open CMD and execute.
@@ -32,7 +32,7 @@ python -m venv venv
 ./venv/Scripts/activate  
 pip install pydantic  
 
-4. Set or Verify bash file permissions (X):  
+4. Set or Verify bash file permissions (X permissions):  
 chmod +x scripts/install_service_nginx.sh  
 
 5. Run the project:  
