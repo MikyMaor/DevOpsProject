@@ -20,7 +20,7 @@ This project aims to provide a clear, modular, and automated simulation of infra
 1. Install requirements (ONLY NEEDED IF RUNNING WINDOWS):  
 Install Python interpreter (Can be found at the official site: https://www.python.org/downloads/ )  
 Install Git Bash / GUI (Can be found at the official site: https://git-scm.com/install/ )  
-After installing these, open CMD and execute.
+After installing these, open CMD/Bash and execute.
 
 2. Clone the repository:  
 git clone https://github.com/MikyMaor/DevOpsProject.git  
