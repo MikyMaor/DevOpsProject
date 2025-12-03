@@ -1,25 +1,47 @@
-import json
+
 import logging
 import os
 from src.input_def import get_user_input
 from src.json_def import save_to_json
 from src.installer_def import run_install_script
 
-# Set up logging and collecting information and define log file path.
-LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs", "provisioning.log")
+# define provisioning logger and log file path.
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+os.makedirs(LOG_DIR, exist_ok=True)
 
-# Configure logging in provisioning log file.
-logging.basicConfig(
-    filename=LOG_PATH,
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
-logging.info("Provisioning script started 🚀")
+PROV_LOG_PATH = os.path.join(LOG_DIR, "provisioning.log")
 
-# if this script is run directly, execute the main functionality. if not, it can be imported without running.
+# set up provisioning logger.
+provisioning_logger = logging.getLogger("provisioning_logger")
+provisioning_logger.setLevel(logging.INFO)
+
+# ensure no duplicate handlers are added.
+if not provisioning_logger.handlers:
+    file_handler = logging.FileHandler(PROV_LOG_PATH)
+    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    file_handler.setFormatter(formatter)
+    provisioning_logger.addHandler(file_handler)
+
+provisioning_logger.info("Provisioning script started 🚀")
+
+
+#  main provisioning workflow
 if __name__ == "__main__":
-    instances = get_user_input(run_script_callback=run_install_script)
-    save_to_json(instances)
 
-    logging.info("Provisioning script finished successfully ✔️")
+    # get user input for machine configurations
+    provisioning_logger.info("Collecting machine input from user...")
+    instances = get_user_input()
+
+    # Save configurations to JSON file
+    provisioning_logger.info("Saving instances to JSON file...")
+    save_to_json(instances)
+    provisioning_logger.info("JSON saved successfully.")
+
+    # Run installation script on Linux only
+    provisioning_logger.info("Starting NGINX installation script...")
+    run_install_script()
+    provisioning_logger.info("NGINX installation script finished.")
+
+    provisioning_logger.info("Provisioning script finished successfully ✔️")
     print("\nProvisioning script finished successfully! ✔️")
