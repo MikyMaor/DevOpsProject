@@ -46,7 +46,7 @@ python Infra_simulator.py
 - Log file generated: logs/provisioning.log
 
 
-##### EXAMPLE ##### 🚨
+🚨 ##### EXAMPLE ##### 🚨
 
 $ python Infra_simulator.py
 
