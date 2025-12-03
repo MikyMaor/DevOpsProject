@@ -1,15 +1,19 @@
-# DevOps Provisioning Simulator
+# DevOps Provisioning Simulator 🏁
 
 This project simulates the provisioning of infrastructure components using Python and Bash scripts.  
 It demonstrates user input handling, service installation logic, logging, and system automation.
 
 The project is designed to run on Linux systems and includes clean modular Python design, structured logging, and Bash provisioning scripts.
 
-## Objectives
-- Simulate provisioning flow using Python & Bash
-- Demonstrate modular coding structure
-- Implement logging for both Python and Bash
-- Showcase error handling and automation logic
+## Objectives 🚀
+
+This project aims to provide a clear, modular, and automated simulation of infrastructure provisioning. Specifically, it demonstrates:
+
+- **Simulate provisioning flow using Python & Bash** – Guide the user through creating virtual machines and installing services automatically.  
+- **Demonstrate modular coding structure** – Organize code into separate modules and scripts for readability and maintainability.  
+- **Implement logging for both Python and Bash** – Track all actions, errors, and successful completions in a dedicated log file.  
+- **Showcase error handling and automation logic** – Handle invalid inputs gracefully and ensure smooth execution of automation tasks.
+
 
  ### Setup Instructions 📌
 
@@ -35,24 +39,29 @@ chmod +x scripts/install_service_nginx.sh
 python Infra_simulator.py
 
 
-#### Expected Output
+#### Expected Output 🚩
 - User chooses services
 - Python logs provisioning steps
 - Bash scripts install selected services
 - Log file generated: logs/provisioning.log
 
 
-##### EXAMPLE #####
+##### EXAMPLE ##### 🚨
 
 $ python Infra_simulator.py
 
 Enter Machine Name (or 'done' to finish): web-server-01
+
 Enter OS (Windows/Linux): Linux
+
 Enter CPU (e.g. Intel Core XXX, AMD Ryzen XXX): Intel Core i5
+
 Enter RAM Capacity (e.g. 4GB): 8GB
 
 🔧 Running installation script at: /home/user/DevOpsProject/scripts/install_service_nginx.sh
+
 --- Bash Script Output ---
+
 Nginx installed successfully!
 
 ✔ Machine added.
