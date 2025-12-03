@@ -1,19 +1,39 @@
-2025-12-02 20:02:46,033 - INFO - Machine created: miky (windows, core i9, 32GB)
-2025-12-02 20:26:55,522 - INFO - Machine created: Miky (Windows, Core i9, 32GB)
-2025-12-02 20:28:33,595 - INFO - Machine created: miky (windows, core i9, 32GB)
-2025-12-02 20:30:03,335 - INFO - Machine created: miky (windows, core i9, 32GB)
-2025-12-02 20:32:09,706 - INFO - Machine created: miky (windows, core i9, 32GB)
-2025-12-02 20:35:31,950 - INFO - Machine created: miky (windows, core i9, 32GB)
-2025-12-02 20:37:24,713 - INFO - Machine created: Miky (windows, core i9, 32GB)
-2025-12-02 20:40:55,962 - INFO - Machine created: Miky (Windows, core i9, 32GB)
-2025-12-02 20:43:23,598 - INFO - Machine created: Miky (Windows, core i9, 32GB)
-2025-12-02 20:46:51,988 - INFO - Machine created: Miky (windows, core i9, 32GB)
-2025-12-02 20:47:31,574 - INFO - Machine created: Miky (windows, core i9, 32GB)
-2025-12-02 20:48:42,239 - INFO - Machine created: Miky (windows, core i9, 32GB)
-2025-12-02 20:49:18,610 - INFO - Machine created: Miky (windows, core i9, 32GB)
-2025-12-02 20:49:42,050 - INFO - Machine created: miky (windows, core i9, 32GB)
-2025-12-02 20:51:48,640 - INFO - Machine created: Miky (windows, core i9, 32GB)
-2025-12-02 20:52:15,292 - INFO - Machine created: Miky (Windows, core i9, 32GB)
-2025-12-02 20:57:07,509 - INFO - Machine created: Miky (windows, core i9, 32GB)
-2025-12-02 20:58:49,079 - INFO - Machine created: miky (windows, core i9, 32GB)
-2025-12-02 21:01:35,785 - INFO - Machine created: Miky (windows, core i9, 32GB)
+2025-12-03 11:47:53,907 - INFO - Provisioning script started \U0001f680
+2025-12-03 11:48:04,276 - INFO - Machine created: miky | OS=windows, CPU=core i9, RAM=32GB
+2025-12-03 11:48:04,277 - INFO - Running install script: C:\Users\maorm2\DevOpsProject\src\scripts\install_service_nginx.sh
+2025-12-03 11:48:04,281 - ERROR - Script file not found
+Traceback (most recent call last):
+  File "C:\Users\maorm2\DevOpsProject\src\installer_def.py", line 15, in run_install_script
+    result = subprocess.run(
+        ["bash", script_path],
+        capture_output=True,
+        text=True
+    )
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+  File "c:\Users\maorm2\.vscode\extensions\ms-python.debugpy-2025.16.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydev_bundle\pydev_monkey.py", line 911, in new_CreateProcess
+    return getattr(_subprocess, original_name)(app_name, cmd_line, *args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2025-12-03 11:48:04,285 - INFO - User input: name=miky, os=windows, cpu=core i9, ram=32Gb

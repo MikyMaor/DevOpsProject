@@ -1,8 +1,14 @@
 [
     {
-        "name": "miky",
-        "os": "windows",
-        "cpu": "core i9",
-        "ram": "32GB"
+        "name": "Mike",
+        "os": "Linux",
+        "cpu": "Core i7",
+        "ram": "16GB"
+    },
+    {
+        "name": "dima",
+        "os": "linux",
+        "cpu": "AMD",
+        "ram": "4GB"
     }
 ]

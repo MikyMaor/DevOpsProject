@@ -8,6 +8,11 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
+# log creation event to provisioning log.
+def log_creation(self):
+    logging.info(f"Machine created: {self.name} | OS={self.os}, CPU={self.cpu}, RAM={self.ram}")
+
+
 # Machine class with validation and logging
 class Machine(BaseModel):
     name: str
@@ -38,12 +43,14 @@ class Machine(BaseModel):
             raise ValueError("CPU model is too short.")
         return v
 
+    # Convert machine to dictionary
     def to_dict(self):
-        """Return a dictionary representation."""
         return self.model_dump()
-
+        
+    # Log creation event to machine log.
     def log_creation(self):
-        """Log creation event."""
-        logging.info(
-            f"Machine created: {self.name} ({self.os}, {self.cpu}, {self.ram})"
-        )
+        logging.info(f"Machine created: {self.name} ({self.os}, {self.cpu}, {self.ram})")
+        
+    # log creation event to provisioning log.
+    def log_creation(self):
+        logging.info(f"Machine created: {self.name} | OS={self.os}, CPU={self.cpu}, RAM={self.ram}")
