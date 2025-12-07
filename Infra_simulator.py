@@ -23,7 +23,7 @@ if not provisioning_logger.handlers:
     file_handler.setFormatter(formatter)
     provisioning_logger.addHandler(file_handler)
 
-provisioning_logger.info("Provisioning script started 🚀")
+provisioning_logger.info("Provisioning script started")
 
 
 #  main provisioning workflow
@@ -38,10 +38,15 @@ if __name__ == "__main__":
     save_to_json(instances)
     provisioning_logger.info("JSON saved successfully.")
 
-    # Run installation script on Linux only
-    provisioning_logger.info("Starting NGINX installation script...")
-    run_install_script()
-    provisioning_logger.info("NGINX installation script finished.")
 
-    provisioning_logger.info("Provisioning script finished successfully ✔️")
+# Run installation script and log result
+success = run_install_script()
+
+if success:
+    provisioning_logger.info("NGINX installation completed successfully.")
+    print("✔ NGINX installed successfully!")
+else:
+    provisioning_logger.error("NGINX installation failed or was skipped.")
+    print("⚠ NGINX installation skipped or failed.")
+
     print("\nProvisioning script finished successfully! ✔️")
